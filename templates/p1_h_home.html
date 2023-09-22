@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Jquery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!--  Font Awesome  -->
+    <script src="https://kit.fontawesome.com/8b7cdef8f0.js" crossorigin="anonymous"></script>
+    <!-- Google Font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        #logo {
+            font-family: 'Lumanosimo', cursive;
+        }
+
+        #all {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #all a div {
+            height: 330px;
+            width: 280px;
+            border: 1px solid black;
+            background: #477cef;
+            color: white;
+            border-radius: 10px;
+            background: url(html1.png) no-repeat 40px 0px;
+            background-size: 200px;
+            margin-top: 50px;
+            margin-right: 30px;
+            box-shadow: 5px 5px 15px 0px #3a3a3a;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #un {
+            text-decoration: none;
+            color: white;
+            margin: 0px 5px;
+            font-weight: bold;
+            font-variant: small-caps;
+            font-size: 20px;
+        }
+
+        #un img {
+            margin-right: 10px;
+        }
+
+        #all div:hover {
+            bottom: 10px;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        @media only screen and (max-width: 670px) {
+                #all{
+                    display: flex;
+                    flex-direction: column;
+                }
+                #all a{
+                    margin: 0px auto;
+                }
+            }
+
+
+        @media only screen and (max-width: 1360px) {
+            .lap {
+                display: none;
+
+            }
+
+            .tab {
+                display: block;
+            }
+        }
+    </style>
+
+
+    <nav class="navbar navbar-expand-sm" style="background-color: #003fc8;">
+        <div class="container-fluid">
+            <a id="logo" class="navbar-brand text-white" href="{{url_for('home')}}">SULearn</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item" style="margin-right:10px;">
+                        <a id="un" href=""> <img src="https://www.w3schools.com/bootstrap5/img_avatar1.png"
+                                alt="Avatar Logo" style="width:40px;" class="rounded-pill">{{name2}}</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{url_for('home')}}" class="btn btn-primary text-white">Logout</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+    <div class="container mt-5">
+        <div class="text-center">
+            <h2>Welcome to <span id="logo">SULearn</span></h2>
+        </div>
+
+        <div class="">
+            <form class="m-5" style="display: flex; justify-content: center;">
+                <input class="search form-control me-2" style="width:500px;" type="text" placeholder="Search">
+                <button class="btn btn-primary" type="button">Search</button>
+            </form>
+        </div>
+
+        <!--  Lap  -->
+        <div class="lap">
+            <div id="all" class="mt-5">
+                <a href="{{url_for('l_home')}}">
+                    <div class="html" style="background-image: url({{url_for('static',filename='html1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            HTML stands for
+                            Hyper Text Markup Language. HTML is the standard markup language for creating Web pages.</p>
+                    </div>
+                </a>
+                <a href="{{url_for('lc_home')}}">
+                    <div class="css" style="background-image: url({{url_for('static',filename='css1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a
+                            document written in HTML or XML.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="bs" style="background-image: url({{url_for('static',filename='bs1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Bootstrap is a free, open source front-end development framework for the creation of
+                            websites and
+                            web apps.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='jq1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:12px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            jQuery is a lightweight, "write less, do more", JavaScript library. The purpose of jQuery is
+                            to make
+                            it much easier to use JavaScript on your website.</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div id="all" class="mt-5">
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='py1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Python is a computer programming language often used to build websites and software,
+                            automate tasks,
+                            and conduct data analysis.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='c1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            C is a general-purpose programming language created by Dennis Ritchie at the Bell
+                            Laboratories in
+                            1972. It is a very popular language, despite being old.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='c++.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            C++ is an object-oriented programming language which gives a clear structure to programs and
+                            allows
+                            code to be reused, lowering development costs.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='java1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Java is a multi-platform, object-oriented, and network-centric language that can be used as
+                            a
+                            platform in itself.</p>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+
+        <!-- Tab -->
+        <div class="tab">
+            <div id="all" class="mt-5">
+                <a href="{{url_for('l_home')}}">
+                    <div class="html" style="background-image: url({{url_for('static',filename='html1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            HTML stands for
+                            Hyper Text Markup Language. HTML is the standard markup language for creating Web pages.</p>
+                    </div>
+                </a>
+                <a href="{{url_for('lc_home')}}">
+                    <div class="css" style="background-image: url({{url_for('static',filename='css1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a
+                            document written in HTML or XML.</p>
+                    </div>
+                </a>
+
+
+            </div>
+            <div id="all" class="mt-5">
+                <a href="">
+                    <div class="bs" style="background-image: url({{url_for('static',filename='bs1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Bootstrap is a free, open source front-end development framework for the creation of
+                            websites and
+                            web apps.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='jq1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:12px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            jQuery is a lightweight, "write less, do more", JavaScript library. The purpose of jQuery is
+                            to make
+                            it much easier to use JavaScript on your website.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div id="all" class="mt-5">
+
+
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='py1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Python is a computer programming language often used to build websites and software,
+                            automate tasks,
+                            and conduct data analysis.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='c1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            C is a general-purpose programming language created by Dennis Ritchie at the Bell
+                            Laboratories in
+                            1972. It is a very popular language, despite being old.</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div id="all" class="mt-5">
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='c++.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            C++ is an object-oriented programming language which gives a clear structure to programs and
+                            allows
+                            code to be reused, lowering development costs.</p>
+                    </div>
+                </a>
+                <a href="">
+                    <div style="background-image: url({{url_for('static',filename='java1.png')}});">
+                        <p
+                            style="background-color: #477cef; border-radius: 10px; padding:15px 7px 0px 7px; margin-top:194px; height: 133px;">
+                            Java is a multi-platform, object-oriented, and network-centric language that can be used as
+                            a
+                            platform in itself.</p>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
